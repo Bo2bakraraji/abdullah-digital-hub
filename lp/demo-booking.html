@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Booking Campaign | Abdullah Digital Hub</title>
+  <meta name="description" content="Demo landing page for testing a local booking campaign flow.">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .demo-hero {
+      padding: 84px 0;
+      background: radial-gradient(circle at top left, rgba(36, 107, 254, 0.16), transparent 34%), #eef4ff;
+    }
+    .demo-wrap {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .demo-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .demo-visual {
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      border-radius: 30px;
+      color: #fff;
+      background: linear-gradient(135deg, #246bfe, #16c7a7);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .demo-visual strong {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+    .demo-list {
+      margin: 22px 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .demo-list li {
+      margin-bottom: 8px;
+    }
+    .small-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .demo-footer {
+      padding: 34px 0;
+      color: #d9e3f2;
+      background: #101827;
+      text-align: center;
+    }
+    @media (max-width: 820px) {
+      .demo-wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="../index.html">Abdullah Digital Hub</a>
+      <div class="nav-links">
+        <a href="#offer">Offer</a>
+        <a href="#book">Book</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="demo-hero">
+      <div class="container demo-wrap">
+        <div>
+          <p class="eyebrow">Demo booking campaign</p>
+          <h1>Weekend Private Pool Booking</h1>
+          <p class="subtitle">A test landing page for the path: Meta ad, landing page, then booking message.</p>
+          <div id="offer" class="demo-card">
+            <h3>Demo offer</h3>
+            <p>Private pool day booking for families and friends in Bekaa.</p>
+            <ul class="demo-list">
+              <li>Simple page for one clear offer.</li>
+              <li>Fast button that sends the visitor to booking.</li>
+              <li>Easy to duplicate later for real local businesses.</li>
+            </ul>
+            <div class="hero-actions" id="book">
+              <a class="button primary" href="https://wa.me/9613341360?text=Hi%20I%20want%20to%20book%20the%20private%20pool%20demo">Book on WhatsApp</a>
+              <a class="button secondary" href="../index.html">View Abdullah Digital Hub</a>
+            </div>
+            <p class="small-note">This is a demo page. For a real client, we replace the name, offer, media, location, and booking number.</p>
+          </div>
+        </div>
+        <div class="demo-visual" aria-label="Campaign visual placeholder">
+          <div>
+            <strong>7-Day<br>Booking<br>Campaign</strong>
+            <p>Landing page demo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="demo-footer">
+    <div class="container">
+      <p>Campaign page by <strong>Abdullah Digital Hub</strong>.</p>
+    </div>
+  </footer>
+</body>
+</html>
