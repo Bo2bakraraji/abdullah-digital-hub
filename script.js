@@ -303,11 +303,25 @@ function loadTikTokPixel() {
   ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
   ttq.setAndDefer = (target, method) => { target[method] = function () { target.push([method].concat(Array.from(arguments))); }; };
   ttq.methods.forEach((method) => ttq.setAndDefer(ttq, method));
-  ttq.load = (id) => {
+  ttq.instance = (id) => {
+    const instance = ttq._i?.[id] || [];
+    ttq.methods.forEach((method) => ttq.setAndDefer(instance, method));
+    return instance;
+  };
+  ttq.load = (id, options = {}) => {
+    const source = "https://analytics.tiktok.com/i18n/pixel/events.js";
+    ttq._i = ttq._i || {};
+    ttq._i[id] = [];
+    ttq._i[id]._u = source;
+    ttq._t = ttq._t || {};
+    ttq._t[id] = Date.now();
+    ttq._o = ttq._o || {};
+    ttq._o[id] = options;
     const script = document.createElement("script");
     script.async = true;
-    script.src = `https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=${id}&lib=ttq`;
-    document.head.appendChild(script);
+    script.src = `${source}?sdkid=${id}&lib=ttq`;
+    const firstScript = document.getElementsByTagName("script")[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
   };
   ttq.load("D9301BBC77U0LQ3AESQ0");
   ttq.page();
